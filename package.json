@@ -1,0 +1,25 @@
+{
+  "name": "study-buddy-finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --env-file=.env server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dereck919/Study-Buddy-Finder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Dereck919/Study-Buddy-Finder/issues"
+  },
+  "homepage": "https://github.com/Dereck919/Study-Buddy-Finder#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
