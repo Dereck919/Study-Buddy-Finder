@@ -17,8 +17,8 @@ const server = http.createServer(async (req, res) => {
       let filePath;
       if (req.url === "/") {
         filePath = path.join(__dirname, "public", "index.html");
-      } else if (req.url === "/about") {
-        filepath = path.join(__dirname, "public", "about.html");
+      } else if (req.url === "/test") {
+        filepath = path.join(__dirname, "public", "test.html");
       } else {
         throw new Error("Not Found");
       }

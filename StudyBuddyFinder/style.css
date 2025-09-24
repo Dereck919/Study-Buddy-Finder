@@ -1,11 +1,36 @@
 body {
-  background-color: rgb(85, 173, 186);
+  background-color: #285b6c;
+}
+
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
 }
 
 h1 {
   text-align: center;
-  font-family:fantasy;
-  font-size:100px;
+  font-family: fantasy;
+  font-size: 100px;
 }
 
 a {
@@ -13,4 +38,11 @@ a {
   font-family: Arial;
   text-align: center;
   text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
 }
