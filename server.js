@@ -12,29 +12,37 @@ console.log(__filename, __dirname);
 const server = http.createServer(async (req, res) => {
   res.setHeader("Content-Type", "text/html");
   res.statusCode = 404;
-  try {
-    if (req.method === "GET") {
-      let filePath;
-      if (req.url === "/") {
-        filePath = path.join(__dirname, "public", "index.html");
-      } else if (req.url === "/test") {
-        filepath = path.join(__dirname, "public", "test.html");
-      } else {
-        throw new Error("Not Found");
-      }
 
-      const data = await fs.readFile(filePath);
-      res.setHeader("Content-Type", "text/html");
-      res.write(data);
-      res.end();
-    } else {
-      throw new Error("Method not allowed");
+  app.get("/route", (req, res) => {
+    try {
+      // ill fill later; get new listings
+      res.send("GET");
+    } catch (error) {
+      res.status(500).send("GET request failed");
     }
-  } catch {
-    res.writeHead(500, { "Content-Type": "text/plain" });
-    res.end("Server Error");
-  }
-});
-server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  });
+
+  app.post("/route", (req, res) => {
+    try {
+      const data = req.body;
+      // ill fill later; post a new listing
+      res.send("POST ");
+    } catch (error) {
+      res.status(500).send("POST request failed");
+    }
+  });
+
+  app.delete("/route/:id", (req, res) => {
+    try {
+      const id = req.params.id;
+      // ill fill later; delete the listing
+      res.send(`DELETE request success for ID: ${id}`);
+    } catch (error) {
+      res.status(500).send("DELETE request failed");
+    }
+  });
+
+  server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
 });
