@@ -1,17 +1,18 @@
 body {
-  background-color: #285b6c;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
 
 .header {
-  text-align: center;
   font-size: 1rem;
-  background-color: #ad7d7d;
+  color: #fff;
+  background-color: #000;
 }
 
 .footer {
-  background-color: #ad7d7d;
+  background-color: #000;
   padding: 10px;
   text-align: center;
 }
@@ -31,11 +32,31 @@ h1 {
   font-size: 6rem;
 }
 
-a {
+/* a {
   font-size: large;
   font-family: Arial;
   text-align: center;
   text-decoration: none;
+} */
+
+a:link {
+  color: #000;
+}
+
+a:visited {
+  color: #3e08f0;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.footer > a {
+  color: #fff;
 }
 
 .container {
@@ -52,6 +73,11 @@ a {
   padding: 20px 20px 30px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+}
+
+.header-button {
+  background-color: rgb(129, 129, 137);
+  border-radius: 10%;
 }
 
 @media (max-width: 600px) {
