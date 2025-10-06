@@ -93,14 +93,16 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   margin: 2rem;
-  padding: 2rem;
+  padding: 6rem;
   border: 1px solid black;
+  gap: 2rem;
 }
 
 .group-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size: x-small;
 }
 
 .group-menu {
@@ -108,12 +110,18 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   margin: 2rem;
-  padding: 2rem;
+  padding: 0 2rem 0 2rem;
   border: 1px solid black;
+  gap: 2rem;
 }
 
 .group-options {
   display: flex;
+  padding: 1rem;
+}
+
+.group-button {
+  border-radius: 15px;
 }
 
 @media (max-width: 600px) {
