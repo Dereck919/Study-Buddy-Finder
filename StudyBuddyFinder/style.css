@@ -67,7 +67,15 @@ a:hover {
   padding: 10px;
 }
 
-.card {
+.card1 {
+  background-color: #fff;
+  margin: 20px 0;
+  padding: 20px 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+}
+
+.card2 {
   background-color: #fff;
   margin: 20px 0;
   padding: 20px 20px 30px;
@@ -78,6 +86,34 @@ a:hover {
 .header-button {
   background-color: rgb(129, 129, 137);
   border-radius: 10%;
+}
+
+.group-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem;
+  padding: 2rem;
+  border: 1px solid black;
+}
+
+.group-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.group-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem;
+  padding: 2rem;
+  border: 1px solid black;
+}
+
+.group-options {
+  display: flex;
 }
 
 @media (max-width: 600px) {
