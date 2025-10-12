@@ -21,5 +21,9 @@
   "homepage": "https://github.com/Dereck919/Study-Buddy-Finder#readme",
   "devDependencies": {
     "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
   }
 }
