@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import express from 'express';
+import { router } from './routes/listingRoutes.js'
 
 const app = express();
 
@@ -12,7 +13,7 @@ mongoose.connect(dbURI)
 app.set('view engine', 'ejs');
 
 // listings
-
+app.use('/listings', router);
 
 //404 page 
 app.use((req, res) => {
