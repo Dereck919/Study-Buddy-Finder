@@ -12,14 +12,6 @@ mongoose.connect(dbURI)
 
 app.set('view engine', 'ejs');
 
-// static files and middleware 
-app.use(express.static('StudyBuddyFinder'));
-app.use(express.urlencoded({ extended: true }));
-app.use((req, res, next) => {
-  res.locals.path = req.path;
-  next();
-});
-
 // listings
 app.use('/listings', router);
 
