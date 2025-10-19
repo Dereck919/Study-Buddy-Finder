@@ -3,8 +3,12 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
+<<<<<<< HEAD
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+=======
+  font-family: arial;
+>>>>>>> 54412ce5166f9b21bb46d45378ec50289b1d18c4
 }
 
 .header {
@@ -52,6 +56,38 @@ h2 {
 .row {
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
+}
+
+label {
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+select {
+  margin-bottom: 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(237, 192, 225);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  min-height: 22px;
+}
+
+button {
+  background-color: rgba(255, 255, 255, 0.737);;
+  color: black;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  margin-right: 15px;
+  min-height: 30px;
+  max-width: 350px;
 }
 
 /* a {
@@ -120,8 +156,8 @@ a:hover {
   justify-content: center;
   min-width: 200px;
   margin: 2rem;
-  padding: 6rem;
-  border: 2px solid black;
+  padding: 7rem;
+  border: 3px solid rgb(0, 0, 0);
   gap: 2rem;
 }
 
@@ -129,7 +165,9 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: small;
+  text-align: left;
+  padding-left: 12px;
+  font-size: 15px;
 }
 
 .group-menu {
@@ -139,17 +177,19 @@ a:hover {
   min-width: 350px;
   margin: 2rem;
   padding: 0 2rem 0 2rem;
-  border: 2px solid black;
+  border: 3px solid rgb(0, 0, 0);
   gap: 2rem;
 }
 
 .group-options {
   display: flex;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .group-button {
   border-radius: 15px;
+  min-width: 300px;
+  min-height: 200px;
 }
 label {
   display: block;
