@@ -106,6 +106,10 @@ a:hover {
 .header-button {
   background-color: rgb(129, 129, 137);
   border-radius: 10%;
+  border: none;
+  color: #fff;
+  padding: 8px 15px;
+  cursor: pointer;
 }
 
 .group-container {

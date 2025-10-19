@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - Study Buddy Finder</title>
+  <link rel="stylesheet" href="signup.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <div class="header">
+    <div class="flex-container">
+      <div>
+        <button class="header-button" onclick="window.location.href='index.html'">
+          <span><i class="fa-solid fa-house"></i></span> Home
+        </button>
+      </div>
+      <div><button class="header-button" onclick="window.location.href='signup.html'">Sign up</button></div>
+      <div><button class="header-button" onclick="window.location.href='signin.html'">Sign in</button></div>
+    </div>
+  </div>
+  <section class="banner">
+    <h2>Join Study Buddy Finder!</h2>
+    <p>Create your account and start connecting with peers.</p>
+  </section>
+  <div class="signup-container">
+    <div class="card">
+      <h2>Sign Up</h2>
+      <form>
+        <div class="row">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Enter username" required />
+        </div>
+        <div class="row">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter email" required />
+        </div>
+        <div class="row">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Enter password" required />
+        </div>
+        <div class="row">
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password" required />
+        </div>
+        <button type="submit" class="signup-btn">Sign Up</button>
+      </form>
+      <p class="login-text">
+        Already have an account? <a href="signin.html">Sign in here</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <a href="https://github.com/Dereck919/Study-Buddy-Finder">
+      <span><i class="fa-brands fa-github"></i></span>
+    </a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In - Study Buddy Finder</title>
+  <link rel="stylesheet" href="signin.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <div class="header">
+    <div class="flex-container">
+      <div>
+        <button class="header-button" onclick="window.location.href='index.html'">
+          <span><i class="fa-solid fa-house"></i></span> Home
+        </button>
+      </div>
+      <div><button class="header-button" onclick="window.location.href='signup.html'">Sign up</button></div>
+      <div><button class="header-button" onclick="window.location.href='signin.html'">Sign in</button></div>
+    </div>
+  </div>
+  <section class="banner">
+    <h2>Welcome Back!</h2>
+    <p>Sign in to connect with your study group and get learning!</p>
+  </section>
+  <div class="login-container">
+    <div class="card">
+      <h2>Sign In</h2>
+      <form>
+        <div class="row">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Enter username" required />
+        </div>
+        <div class="row">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Enter password" required />
+        </div>
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+      <p class="signup-text">
+        Don’t have an account? <a href="signup.html">Sign up here</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="https://github.com/Dereck919/Study-Buddy-Finder">
+      <span><i class="fa-brands fa-github"></i></span>
+    </a>
+  </div>
+</body>
+</html>
