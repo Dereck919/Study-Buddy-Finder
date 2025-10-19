@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser";
 import { createClient } from "@supabase/supabase-js";
 import path from "path";
 import { fileURLToPath } from "url";
+import cors from "cors";
 
 const PORT = process.env.PORT;
 const SUPABASE_URL = process.env.SUPABASE_URL;
@@ -15,6 +16,12 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(
+  cors({
+    origin: ["http://127.0.0.1:5500"],
+    credentials: true,
+  })
+);
 
 const requireAuth = async (req, res, next) => {
   const token = req.cookies?.access_token;
@@ -35,11 +42,9 @@ app.get("/", (_req, res) => {
 
 app.post("/signup", async (req, res) => {
   try {
-    const { username, email, password } = req.body;
-    if (!username || !email || !password)
-      return res
-        .status(400)
-        .json({ error: "Username, email, and password required" });
+    const { email, password } = req.body;
+    if (!email || !password)
+      return res.status(400).json({ error: "Email, and password required" });
 
     const { data, error } = await supabase.auth.signUp({ email, password });
     if (error) return res.status(400).json({ error: error.message });
@@ -71,8 +76,8 @@ app.post("/login", async (req, res) => {
 
     res.cookie("access_token", accessToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
+      secure: true,
+      sameSite: "none",
       path: "/",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
