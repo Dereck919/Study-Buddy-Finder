@@ -3,6 +3,8 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .header {
@@ -148,6 +150,10 @@ a:hover {
 
 .group-button {
   border-radius: 15px;
+}
+label {
+  display: block;
+  margin-bottom: 4px;
 }
 
 @media (max-width: 600px) {

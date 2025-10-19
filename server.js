@@ -49,7 +49,7 @@ app.post("/signup", async (req, res) => {
     const { data, error } = await supabase.auth.signUp({ email, password });
     if (error) return res.status(400).json({ error: error.message });
 
-    res.status(201).json({
+    res.status(200).json({
       message: "User signed up successfully",
       user: data.user,
     });
@@ -104,14 +104,36 @@ app.get("/private", requireAuth, (req, res) => {
   });
 });
 
-app.post("/listings", (req, res) => {
-  try {
-    const data = req.body;
-    res.status(201).json({ message: "POST success", data });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "POST request failed" });
+app.post("/listings", async (req, res) => {
+  const { location, group_size, time, description } = req.body;
+
+  if (!location || !group_size || !time) {
+    return res.status(400).json({ error: "Missing required fields" });
   }
+
+  const { data, error } = await supabase
+    .from("listings")
+    .insert([{ location, group_size, time, description }])
+    .select();
+
+  if (error) {
+    return res.status(500).json({ error: error.message });
+  }
+
+  res.json(data[0]);
+});
+
+app.get("/listings", async (req, res) => {
+  const { data, error } = await supabase
+    .from("listings")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    return res.status(500).json({ error: error.message });
+  }
+
+  res.json(data);
 });
 
 app.delete("/listings/:id", (req, res) => {
@@ -125,5 +147,5 @@ app.delete("/listings/:id", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`✅ Server running on Port ${PORT}`);
+  console.log(`Server running on Port ${PORT}`);
 });
