@@ -22,33 +22,60 @@
         <div><button class="header-button">Sign in</button></div>
       </div>
     </div>
-
+    <section class="banner">
+      <h2>Find Your Study Buddy!</h2>
+      <p>Connect with your peers, find your schedule, succeed together.</p>
+    </section>
     <div class="container">
-      <div class="group-container">
-        <h2>Groups</h2>
-        <button class="group-button">
-          <div class="group-details">
-            <p>Group Size:</p>
-            <p>Subject:</p>
-            <p>Location:</p>
-          </div>
-        </button>
-        <button>Search</button>
-      </div>
       <div class="group-menu">
+        <h2>Group Search</h2>
         <div class="group-options">
           <button>Create Group</button>
           <button>View History</button>
           <button>Log Out</button>
         </div>
         <div class="group-description">
-          <p>Group Owner</p>
-          <p>Preferred Group Size</p>
-          <p>Location</p>
-          <p>Time</p>
+        <div class="row">
+          <label for="group-size">Preferred Group Size:</label>
+          <select id="group-size" name="group-size">
+          <option value="">Select</option>
+          <option value="">2-3 People</option>
+          <option value="">4-5 People</option>
+          <option value="">6+</option>
+            </select>
+        </div>
+        <div class="row">
+            <label for="location">Location:</label>
+          <select id="location" name="location">
+          <option value="">Select</option>
+          <option value="">Student Center</option>
+          <option value="">Libary</option>
+          <option value="">Online</option>
+            </select>
+            </div>
+          <div class="row"> 
+            <label for="time">Time:</label>
+            <select id="time" name="time">
+          <option value="">Select</option>
+          <option value="">Morning</option>
+          <option value="">Afternoon</option>
+          <option value="">Evening</option>
+            </select>
+          </div>
           <p>Description</p>
         </div>
         <button>Reserve Spot</button>
+      </div>
+      <div class="group-container">
+        <h2>Group Results</h2>
+        <button class="group-button">
+          <div class="group-details">
+            <p>Group Size:</p>
+            <p>Location:</p>
+            <p>Time:</p>
+          </div>
+        </button>
+        <button>Search</button>
       </div>
     </div>
     <div class="footer">
