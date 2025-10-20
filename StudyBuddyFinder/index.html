@@ -2,115 +2,100 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>Study Buddy Finder</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In - Study Buddy Finder</title>
+    <link rel="stylesheet" href="index.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <script src="index.js"></script>
   </head>
   <body>
     <div class="header">
       <div class="flex-container">
         <div>
-          <button class="header-button">
-            <span><i class="fa-solid fa-user"></i></span>
-            Profile
+          <!-- where the home button was -->
+        </div>
+        <div>
+          <button
+            class="header-button"
+            onclick="window.location.href='public/signup.html'"
+          >
+            Sign up
           </button>
         </div>
         <div>
-          <button class="header-button">
-            <span><i class="fa-solid fa-house"></i></span> Home
+          <button
+            class="header-button"
+            onclick="window.location.href='index.html'"
+          >
+            Sign in
           </button>
-        </div>
-        <div>
-          <button class="header-button" onclick="logout()">Logout</button>
         </div>
       </div>
     </div>
     <section class="banner">
-      <h2 id="welcome">Loading...</h2>
-      <p>Connect with your peers, find your schedule, and succeed together.</p>
+      <h2>Welcome Back!</h2>
+      <p>Sign in to connect with your study group and get learning!</p>
     </section>
-    <div class="container">
-      <div class="group-menu">
-        <h2>Group Search</h2>
-        <div class="group-options">
-          <button type="button">Find Groups</button>
-          <button type="button" onclick="getListings()">My Listings</button>
-          <button onclick="location.reload()">Refresh</button>
-        </div>
-        <div class="group-description">
+    <div class="login-container">
+      <div class="card">
+        <h2>Sign In</h2>
+        <form id="form">
           <div class="row">
-            <label for="group-size">Preferred Group Size:</label>
-            <select id="group-size" name="group-size">
-              <option value="0">Select</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6+</option>
-            </select>
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter email"
+              required
+            />
           </div>
           <div class="row">
-            <label for="location">Location:</label>
-            <select id="location" name="location">
-              <option value="0">Select</option>
-              <option value="student center">Student Center</option>
-              <option value="library">Libary</option>
-              <option value="online">Online</option>
-            </select>
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter password"
+              required
+            />
           </div>
-          <div class="row">
-            <label for="time">Time:</label>
-            <select id="time" name="time">
-              <option value="0">Select</option>
-              <option value="8am">8am</option>
-              <option value="9am">9am</option>
-              <option value="10am">10am</option>
-              <option value="12pm">12pm</option>
-              <option value="1pm">1pm</option>
-              <option value="2pm">2pm</option>
-              <option value="3pm">3pm</option>
-              <option value="4pm">4pm</option>
-              <option value="6pm">6pm</option>
-              <option value="7pm">7pm</option>
-              <option value="8pm">8pm</option>
-              <option value="9pm">9pm</option>
-              <option value="10pm">10pm</option>
-            </select>
-          </div>
-          <label for="description">Description:</label>
-          <textarea
-            name="paragraph_text"
-            cols="45"
-            rows="5"
-            id="description"
-          ></textarea>
-          <button type="button" onclick="createListing()">Create Group</button>
-        </div>
-      </div>
-      <div class="group-container">
-        <h2>Group Availability</h2>
-        <button class="group-button">
-          <div class="group-details">
-            <p>Group Size:</p>
-            <p>Location:</p>
-            <p>Time:</p>
-          </div>
-        </button>
-        <button>Edit</button>
+          <button type="submit" class="login-btn">Login</button>
+        </form>
+        <p class="signup-text">
+          Don’t have an account? <a href="signup.html">Sign up here</a>
+        </p>
       </div>
     </div>
+
     <div class="footer">
       <a href="https://github.com/Dereck919/Study-Buddy-Finder">
         <span><i class="fa-brands fa-github"></i></span>
       </a>
     </div>
+    <script>
+      const API = "http://localhost:3000";
+
+      document.getElementById("form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const res = await fetch(`${API}/login`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({ email, password }),
+        });
+        const data = await res.json();
+        if (res.ok) {
+          location.href = "/StudyBuddyFinder/index.html";
+        } else {
+          alert(data.error || "Login failed");
+        }
+      });
+    </script>
   </body>
 </html>
