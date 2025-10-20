@@ -21,6 +21,9 @@ body {
   background-color: #000;
   padding: 10px;
   text-align: center;
+  a {
+    color: #fff;
+  }
 }
 
 .navbar {
@@ -89,26 +92,6 @@ button {
   font-weight: 600;
   min-height: 30px;
   max-width: 350px;
-}
-
-a:link {
-  color: #000;
-}
-
-a:visited {
-  color: #3e08f0;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: red;
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-.footer > a {
-  color: #fff;
 }
 
 .container {

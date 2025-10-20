@@ -4,41 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up - Study Buddy Finder</title>
-    <link rel="stylesheet" href="signup.css" />
+    <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
   <body>
-    <div class="header">
-      <div class="flex-container">
-        <div>
-          <!-- where the home button was  -->
-        </div>
-        <div>
-          <button
-            class="header-button"
-            onclick="window.location.href='signup.html'"
-          >
-            Sign up
-          </button>
-        </div>
-        <div>
-          <button
-            class="header-button"
-            onclick="window.location.href='signin.html'"
-          >
-            Sign in
-          </button>
-        </div>
-      </div>
-    </div>
+    <header class="header">
+      <nav class="navbar">
+        <button
+          class="header-button"
+          onclick="window.location.href='signup.html'"
+        >
+          Sign up
+        </button>
+        <button
+          class="header-button"
+          onclick="window.location.href='index.html'"
+        >
+          Sign in
+        </button>
+      </nav>
+    </header>
     <section class="banner">
       <h2>Join Study Buddy Finder!</h2>
       <p>Create your account and start connecting with peers.</p>
     </section>
-    <div class="signup-container">
+    <div class="container">
       <div class="card">
         <h2>Sign Up</h2>
         <form id="form">
@@ -62,10 +55,10 @@
               required
             />
           </div>
-          <button type="submit" class="signup-btn">Sign Up</button>
+          <button type="submit" class="btn">Sign Up</button>
         </form>
-        <p class="login-text">
-          Already have an account? <a href="signin.html">Sign in here</a>
+        <p class="text">
+          Already have an account? <a href="index.html.html">Sign in here</a>
         </p>
       </div>
     </div>
@@ -90,7 +83,7 @@
         });
         const data = await res.json();
         if (res.ok) {
-          location.href = "/StudyBuddyFinder/index.html";
+          location.href = "/StudyBuddyFinder/home.html";
         } else {
           alert(data.error || "Signup failed");
         }

@@ -3,7 +3,7 @@ const API = "http://localhost:3000";
 (async () => {
   const res = await fetch(`${API}/me`, { credentials: "include" });
   const data = await res.json();
-  if (!res.ok) return (location.href = "public/signin.html");
+  if (!res.ok) return (location.href = "public/index.html");
   document.getElementById("welcome").textContent =
     "Welcome back, " + data.user.email + "!";
 })();
@@ -49,18 +49,8 @@ async function logout() {
     localStorage.removeItem("auth");
     sessionStorage.removeItem("auth");
 
-    window.location.replace("public/signin.html");
+    window.location.replace("public/index.html");
   } catch (err) {
     console.log(err.message);
   }
 }
-
-(function () {
-  const toggle = document.getElementById("menu-toggle");
-  const mobileView = document.getElementById("mobile-view");
-
-  toggle.addEventListener("click", () => {
-    const isHidden = mobileView.classList.toggle("hidden");
-    toggle.setAttribute("aria-expanded", !isHidden);
-  });
-})();
