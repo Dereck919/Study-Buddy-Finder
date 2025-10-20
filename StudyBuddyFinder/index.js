@@ -54,3 +54,13 @@ async function logout() {
     console.log(err.message);
   }
 }
+
+(function () {
+  const toggle = document.getElementById("menu-toggle");
+  const mobileView = document.getElementById("mobile-view");
+
+  toggle.addEventListener("click", () => {
+    const isHidden = mobileView.classList.toggle("hidden");
+    toggle.setAttribute("aria-expanded", !isHidden);
+  });
+})();

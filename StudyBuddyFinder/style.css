@@ -23,14 +23,12 @@ body {
   text-align: center;
 }
 
-.flex-container {
+.navbar {
   display: flex;
   justify-content: right;
-}
-
-.flex-container > div {
   font-size: 1rem;
   padding: 1rem;
+  gap: 1rem;
 }
 
 h1 {

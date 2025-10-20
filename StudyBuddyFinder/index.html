@@ -15,24 +15,19 @@
     <script src="index.js"></script>
   </head>
   <body>
-    <div class="header">
-      <div class="flex-container">
-        <div>
-          <button class="header-button">
-            <span><i class="fa-solid fa-user"></i></span>
-            Profile
-          </button>
-        </div>
-        <div>
-          <button class="header-button">
-            <span><i class="fa-solid fa-house"></i></span> Home
-          </button>
-        </div>
-        <div>
-          <button class="header-button" onclick="logout()">Logout</button>
-        </div>
-      </div>
-    </div>
+    <header class="header">
+      <nav class="navbar">
+        <button class="header-button">
+          <i class="fa-solid fa-user"></i> Profile
+        </button>
+
+        <button class="header-button">
+          <i class="fa-solid fa-house"></i> Home
+        </button>
+
+        <button class="header-button" onclick="logout()">Logout</button>
+      </nav>
+    </header>
     <section class="banner">
       <h2 id="welcome">Loading...</h2>
       <p>Connect with your peers, find your schedule, and succeed together.</p>
