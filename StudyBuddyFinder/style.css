@@ -3,12 +3,8 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-<<<<<<< HEAD
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-=======
-  font-family: arial;
->>>>>>> 54412ce5166f9b21bb46d45378ec50289b1d18c4
 }
 
 .header {
@@ -47,10 +43,13 @@ h2 {
   background-color: rgb(181, 107, 157);
 }
 
-.group-discription {
+.group-description {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  textarea {
+    border-radius: 5px;
+  }
 }
 
 .row {
@@ -75,27 +74,20 @@ select {
   letter-spacing: 0.6px;
   font-weight: 600;
   min-height: 22px;
+  width: 30%;
 }
 
 button {
-  background-color: rgba(255, 255, 255, 0.737);;
+  background-color: rgba(255, 255, 255, 0.737);
   color: black;
   border: none;
   border-radius: 7px;
   cursor: pointer;
   letter-spacing: 0.6px;
   font-weight: 600;
-  margin-right: 15px;
   min-height: 30px;
   max-width: 350px;
 }
-
-/* a {
-  font-size: large;
-  font-family: Arial;
-  text-align: center;
-  text-decoration: none;
-} */
 
 a:link {
   color: #000;
@@ -120,7 +112,6 @@ a:hover {
 .container {
   display: flex;
   flex-direction: row;
-  min-width: 300px;
   margin: 100px auto;
   padding: 10px;
 }
@@ -154,7 +145,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 200px;
   margin: 2rem;
   padding: 7rem;
   border: 3px solid rgb(0, 0, 0);
@@ -174,31 +164,32 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 350px;
   margin: 2rem;
-  padding: 0 2rem 0 2rem;
+  padding: 2rem;
   border: 3px solid rgb(0, 0, 0);
   gap: 2rem;
 }
 
 .group-options {
   display: flex;
-  padding: 2rem;
+  gap: 1.5rem;
+  width: 100%;
+  button {
+    width: 100%;
+  }
 }
 
 .group-button {
   border-radius: 15px;
-  min-width: 300px;
-  min-height: 200px;
 }
+
 label {
   display: block;
   margin-bottom: 4px;
 }
 
-@media (max-width: 600px) {
-  .row {
-    -webkit-flex-direction: column;
+@media (max-width: 768px) {
+  .container {
     flex-direction: column;
   }
 }

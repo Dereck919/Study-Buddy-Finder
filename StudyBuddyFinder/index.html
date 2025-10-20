@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>Study Buddy Finder</title>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -16,24 +19,17 @@
       <div class="flex-container">
         <div>
           <button class="header-button">
+            <span><i class="fa-solid fa-user"></i></span>
+            Profile
+          </button>
+        </div>
+        <div>
+          <button class="header-button">
             <span><i class="fa-solid fa-house"></i></span> Home
           </button>
         </div>
         <div>
-          <button
-            class="header-button"
-            onclick="window.location.href='public/signup.html'"
-          >
-            Sign up
-          </button>
-        </div>
-        <div>
-          <button
-            class="header-button"
-            onclick="window.location.href='public/signin.html'"
-          >
-            Sign in
-          </button>
+          <button class="header-button" onclick="logout()">Logout</button>
         </div>
       </div>
     </div>
@@ -45,9 +41,9 @@
       <div class="group-menu">
         <h2>Group Search</h2>
         <div class="group-options">
-          <button type="button" onclick="createListing()">Create Group</button>
-          <button type="button" onclick="getListings()">View History</button>
-          <button>Log Out</button>
+          <button type="button">Find Groups</button>
+          <button type="button" onclick="getListings()">My Listings</button>
+          <button onclick="location.reload()">Refresh</button>
         </div>
         <div class="group-description">
           <div class="row">
@@ -89,7 +85,6 @@
               <option value="10pm">10pm</option>
             </select>
           </div>
-<<<<<<< HEAD
           <label for="description">Description:</label>
           <textarea
             name="paragraph_text"
@@ -97,10 +92,8 @@
             rows="5"
             id="description"
           ></textarea>
-=======
->>>>>>> 54412ce5166f9b21bb46d45378ec50289b1d18c4
+          <button type="button" onclick="createListing()">Create Group</button>
         </div>
-        <button>Reserve Spot</button>
       </div>
       <div class="group-container">
         <h2>Group Availability</h2>
@@ -111,7 +104,7 @@
             <p>Time:</p>
           </div>
         </button>
-        <button>Search</button>
+        <button>Edit</button>
       </div>
     </div>
     <div class="footer">

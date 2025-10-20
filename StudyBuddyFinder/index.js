@@ -1,5 +1,6 @@
+const API = "http://localhost:3000";
+
 (async () => {
-  const API = "http://localhost:3000";
   const res = await fetch(`${API}/me`, { credentials: "include" });
   const data = await res.json();
   if (!res.ok) return (location.href = "public/signin.html");
@@ -8,7 +9,6 @@
 })();
 
 async function createListing() {
-  const API = "http://localhost:3000";
   const location = document.getElementById("location").value;
   const group_size = parseInt(document.getElementById("group-size").value);
   const time = document.getElementById("time").value;
@@ -25,7 +25,7 @@ async function createListing() {
     alert("Listing submitted!");
     console.log("Inserted:", data);
   } else {
-    alert("Error: " + data.error);
+    console.log("Error: " + data.error);
   }
 }
 
@@ -35,4 +35,22 @@ async function getListings() {
       Authorization: `Bearer ${user.access_token}`,
     },
   });
+}
+
+async function logout() {
+  try {
+    const res = await fetch(`${API}/logout`, {
+      method: "POST",
+      credentials: "include",
+    });
+
+    if (!res.ok) throw new Error("Fail");
+
+    localStorage.removeItem("auth");
+    sessionStorage.removeItem("auth");
+
+    window.location.replace("public/signin.html");
+  } catch (err) {
+    console.log(err.message);
+  }
 }

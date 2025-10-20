@@ -92,9 +92,19 @@ app.get("/me", requireAuth, (req, res) => {
   res.status(200).json({ user: req.user });
 });
 
-app.post("/logout", (req, res) => {
-  res.clearCookie("access_token", { path: "/" });
-  res.status(200).json({ message: "Logged out" });
+app.post("/logout", async (req, res) => {
+  try {
+    const { error } = await supabase.auth.signOut();
+
+    res.clearCookie("access_token", { path: "/" });
+
+    if (error) throw error;
+
+    res.status(200).json({ message: "Logged out" });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: "Logout failed" });
+  }
 });
 
 app.get("/private", requireAuth, (req, res) => {
