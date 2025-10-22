@@ -30,11 +30,17 @@ async function createListing() {
 }
 
 async function getListings() {
-  fetch("http://localhost:3000/listings", {
-    headers: {
-      Authorization: `Bearer ${user.access_token}`,
-    },
+  const res = await fetch(`${API}/listings`, {
+    method: "GET",
   });
+
+  const data = await res.json();
+  const paragraphs = document.querySelectorAll("div.group-details > p");
+  paragraphs[0].textContent += " " + data[0].group_size;
+  paragraphs[1].textContent += " " + data[0].location;
+  paragraphs[2].textContent += " " + data[0].time;
+  paragraphs[3].textContent += " " + data[0].description;
+  console.log(data);
 }
 
 async function logout() {
